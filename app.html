@@ -292,7 +292,7 @@ body {
     let msg1 = { name: "User", message: text1 }
     this.message.push(msg1);
 
-    fetch('http://13.127.215.4:8000/chat', {
+    fetch('https://api-1-pd6z.onrender.com/chat', {
         method: 'POST',
         body: JSON.stringify({message:text1}),
         mode: 'cors',
