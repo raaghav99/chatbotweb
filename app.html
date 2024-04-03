@@ -10,14 +10,14 @@
             margin: 0;
             padding: 0;
         }
-
+ 
         body {
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
     font-size: 100%;
     background: white;
 }
-
+ 
         *, html {
     --primaryGradient: linear-gradient(93.12deg, #16c7e7 0.52%, #1daae7 100%);
     --secondaryGradient: linear-gradient(268.91deg, #16c7e7 -2.14%, #1daae7 99.69%);
@@ -25,7 +25,7 @@
     --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
     --primary: #16c7e7;
 }
-
+ 
         .chatbox {
             position: fixed;
             bottom: 30px;
@@ -33,18 +33,18 @@
             z-index: 9999;
             display: none;
         }
-
+ 
         .chatbox__support {
             display: flex;
             flex-direction: column;
             background: #f9f9f9;
             width: 300px;
-            height: 450px;
+            height: 420px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
         }
-
+ 
         .chatbox--active {
     transform: translateY(-40px);
     z-index: 123456;
@@ -56,39 +56,39 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 15px 20px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    padding: 9px 9px; /* Adjusted padding */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     box-shadow: var(--primaryBoxShadow);
 }
-
+ 
         .chatbox__image--header {
             margin-right: 10px;
         }
-
+ 
         .chatbox__heading--header {
             font-size: 1.2rem;
             color: white;
         }
-
+ 
         .chatbox__description--header {
             font-size: .9rem;
             color: white;
         }
-
+ 
         .chatbox__messages {
             overflow-y: auto;
             flex: 1;
             padding: 20px;
         }
-
+ 
         .messages__item {
     margin-top: 10px;
     background: #E0E0E0;
     padding: 8px 12px;
     max-width: 70%;
 }
-
+ 
    /* Adjusted CSS for user's message */
    .messages__item--visitor {
     margin-top: 10px;
@@ -101,8 +101,8 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-
-
+ 
+ 
     /* Adjusted CSS for chatbot's message */
     .messages__item--operator {
         margin-top: 10px;
@@ -114,21 +114,21 @@
         border-top-right-radius: 20px;
         border-bottom-left-radius: 20px;
     }
-
  
-.chatbox__footer {
+ 
+    .chatbox__footer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 20px;
+    padding: 7px 7px; /* Adjusted padding */
     background: var(--secondaryGradient);
     box-shadow: var(--secondaryBoxShadow);
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    margin-top: 20px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin-top: 15px; /* Adjusted margin */
 }
-
+ 
         .chatbox__footer input {
     width: 80%;
     border: none;
@@ -136,7 +136,7 @@
     border-radius: 30px;
     text-align: left;
 }
-
+ 
         .chatbox__send--footer {
             color: white;
             padding: 6px;
@@ -145,7 +145,7 @@
             outline: none;
             cursor: pointer;
         }
-
+ 
         .chatbox__button button,
 .chatbox__button button:focus,
 .chatbox__button button:visited {
@@ -159,7 +159,7 @@
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
-
+ 
         .close-icon--header { /* corrected */
             position: absolute;
             top: 7px;
@@ -173,14 +173,14 @@
             align-items: center; /* Center vertically */
             justify-content: center; /* Center horizontally */
         }
-
+ 
         .chatbox__toggle {
             position: fixed;
             bottom: 30px;
             right: 30px;
             cursor: pointer;
         }
-
+ 
         .chatbox__toggle img {
             width: 300px;
             height: 350px;
@@ -190,9 +190,9 @@
 <body>
     <div class="container">
         <div class="chatbox__toggle" onclick="toggleChatbox()">
-            <img src="r2.webp" alt="Chatbot">
+            <img src="https://webpage222224.s3.amazonaws.com/r2.webp" alt="Chatbot">
         </div>
-
+ 
         <div class="chatbox">
             <div class="chatbox__support">
                 <div class="chatbox__header">
@@ -217,14 +217,14 @@
             </div>
         </div>
     </div>
-    
+   
     <script>
         function toggleChatbox() {
             var chatbox = document.querySelector('.chatbox');
             chatbox.style.display = chatbox.style.display === 'none' || chatbox.style.display === '' ? 'block' : 'none';
         }
-        
-        class Chatbox 
+       
+        class Chatbox
 {
     constructor()
     {
@@ -240,7 +240,7 @@
             display() {
                 const { Chatbox, sendButton } = this.args;
                 sendButton.addEventListener('click', () => this.onSendButton(Chatbox));
-
+ 
                 const node = Chatbox.querySelector('input');
                 node.addEventListener("keyup", ({ key }) => {
                     if (key === "Enter") {
@@ -248,7 +248,7 @@
                     }
                 });
             }
-
+ 
             toggleState(Chatbox) {
         this.state = !this.state;
  
@@ -259,17 +259,17 @@
             Chatbox.classList.remove('chatbox--active')
         }
     }
-
+ 
     onSendButton(Chatbox) {
     var textField = Chatbox.querySelector('input');
     let text1 = textField.value
     if (text1 === "") {
         return;
     }
-
+ 
     let msg1 = { name: "User", message: text1 }
     this.message.push(msg1);
-
+ 
     fetch('https://api-1-pd6z.onrender.com/chat', {
         method: 'POST',
         body: JSON.stringify({ message: text1 }),
@@ -298,13 +298,13 @@
             textField.value = '';
         });
 }
-
+ 
 scrollToBottom(Chatbox) {
     const chatmessage = Chatbox.querySelector('.chatbox__messages');
     chatmessage.scrollTop = chatmessage.scrollHeight - chatmessage.clientHeight;
 }
-
-
+ 
+ 
             updateChatText(Chatbox) {
     var html = '';
     this.message.forEach(function(item) {
@@ -314,21 +314,21 @@ scrollToBottom(Chatbox) {
             html += '<div class="messages__item messages__item--operator">' + item.message + '</div>';
         }
     });
-
+ 
     const chatmessage = Chatbox.querySelector('.chatbox__messages');
     const isScrolledToBottom = chatmessage.scrollHeight - chatmessage.clientHeight <= chatmessage.scrollTop + 1;
-
+ 
     chatmessage.innerHTML = html;
-
+ 
     // If already scrolled to bottom or near bottom, keep it scrolled to bottom
     if (isScrolledToBottom) {
         chatmessage.scrollTop = chatmessage.scrollHeight - chatmessage.clientHeight;
     }
 }
-
-
+ 
+ 
         }
-
+ 
         const chatbox = new Chatbox();
         chatbox.display();
     </script>
